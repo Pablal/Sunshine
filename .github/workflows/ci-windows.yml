@@ -70,17 +70,17 @@ jobs:
             toolchain: clang-aarch64
     steps:
       - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           submodules: recursive
           token: ${{ secrets.LIBVIRTUALHID_READ_TOKEN }}
-
+    
       - name: Update libvirtualhid to latest commit
-          shell: bash
-          run: |
-            git -C third-party/libvirtualhid fetch origin main
-            git -C third-party/libvirtualhid checkout --detach FETCH_HEAD
-            git -C third-party/libvirtualhid rev-parse HEAD
+        shell: bash
+        run: |
+          git -C third-party/libvirtualhid fetch origin main
+          git -C third-party/libvirtualhid checkout --detach FETCH_HEAD
+          git -C third-party/libvirtualhid rev-parse HEAD
 
       - name: Setup Dependencies Windows
         # if a dependency needs to be pinned, see https://github.com/LizardByte/build-deps/pull/186
