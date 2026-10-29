@@ -78,7 +78,7 @@ jobs:
       - name: Update libvirtualhid to latest commit
         shell: bash
         run: |
-          git -C third-party/libvirtualhid fetch origin main
+          git -C third-party/libvirtualhid fetch origin master
           git -C third-party/libvirtualhid checkout --detach FETCH_HEAD
           git -C third-party/libvirtualhid rev-parse HEAD
 
